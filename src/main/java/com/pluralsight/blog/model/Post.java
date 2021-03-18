@@ -80,4 +80,11 @@ public class Post {
         return this.title.equals(otherPost.getTitle()) &&
                this.body.equals(otherPost.getBody());
     }
+
+    //This piece of code is used to add the relationship between author and post
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Author author;
+
+    public Author getAuthor(){ return author;}
+    public void setAuthor(Author author){ this.author = author;}
 }
